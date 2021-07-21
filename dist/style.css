@@ -1,0 +1,153 @@
+html, body {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+input {
+    outline: none;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    padding: 0.5rem;
+    background-color: #333;
+}
+
+.header h1{
+    font-family: sans-serif;
+    color: #eee;
+    font-weight: 800;
+    font-size: 4rem;
+    margin-left: 3.5rem;
+}
+
+/* Main */
+
+.main {
+    display: flex;
+    min-height: 82.7vh;
+    background-color: #eee;
+}
+
+/* Nav */
+
+nav {
+    display: flex;
+    min-width: 20%;
+    padding: 2rem;
+    flex-direction: column;
+    background-color: #ddd;
+}
+
+nav.project-panel h1 {
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2rem;
+    font-weight: 800;
+    border-bottom: 2px solid gray;
+}
+
+/* Nav - buttons */
+
+.button-add-project {
+    display: block;
+    border: none;
+    background-color: #ddd;
+    margin-top: 5rem;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.button-add-project.active {
+    display: none;
+  }
+
+.button-add-project:hover {
+  background-color: #ccc;
+}
+
+/* Nav - popup */
+
+.add-project-popup {
+    display: none;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+.add-project-popup,
+.button-add-project-popup,
+.button-cancel-project-popup {
+    display: none;
+}
+
+.add-project-popup.active,
+.button-add-project-popup.active,
+.button-cancel-project-popup.active {
+    display: block;
+  }
+
+.input-add-project-popup {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.add-project-popup-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-add-project-popup {
+    width: 45%;
+    border: 1px solid #99dd99;
+    background-color: #aaffaa;
+    font-weight: bold;
+}
+
+.button-cancel-project-popup {
+    width: 45%;
+    border: 1px solid #eeadad;
+    background-color: #ffbebe;
+    font-weight: bold;
+}
+
+
+/* Footer */
+
+.footer{
+    position: fixed;
+    background-color: #333;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.footer p {
+    color: #eee;
+    text-align: center;
+    font-size: 1.5rem;
+}

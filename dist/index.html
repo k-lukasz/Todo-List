@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="content"></div>
+<div id="content">
 
+<header class="header">
+    <h1>Todo List</h1>
+</header>
+
+<main class="main">
+
+    <nav class="project-panel">
+        <!-- Default view -->
+        <h1 class="project-title">Projects</h1>
+        <div class="projects-list" id="projects-list"></div>
+        <button class="button-add-project" id="button-add-project">+ Add Project</button>
+
+        <!-- User interference! -->
+        <div class="add-project-popup" id="add-project-popup">
+            <input class="input-add-project-popup" id="input-add-project-popup" type="text">
+        
+        <div class="add-project-popup-buttons">
+            <button class="button-add-project-popup" id="button-add-project-popup">Add</button>
+            <button class="button-cancel-project-popup" id="button-cancel-project-popup">Cancel</button>
+        </div>
+    </div>
+    </nav>
+
+</main>
+
+<footer class="footer">
+    <p>Copyright © 2021 Me</p>
+</footer>
+
+</div>
     <script src="main.js"></script>
 </body>
 </html>
