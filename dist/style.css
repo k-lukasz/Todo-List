@@ -66,6 +66,19 @@ nav.project-panel h1 {
     border-bottom: 2px solid gray;
 }
 
+.title-name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    padding: 0.5rem;
+    background-color: #ddd;
+    width: 100%;
+    cursor: pointer;
+}
+
+.title-name:hover {
+    background-color: #ccc;
+  }
+
 /* Nav - buttons */
 
 .button-add-project {
@@ -84,6 +97,23 @@ nav.project-panel h1 {
 .button-add-project:hover {
   background-color: #ccc;
 }
+
+.button-delete-project {
+    display: block;
+    border: none;
+    background-color: #ddd;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.button-delete-project.active {
+    display: none;
+  }
+
+.button-delete-project:hover {
+  background-color: #ccc;
+}
+
 
 /* Nav - popup */
 
