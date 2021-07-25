@@ -1,5 +1,8 @@
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';
+const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
+
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
+let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
 // New projects list
 const projectsList = document.querySelector('#projects-list');
@@ -52,11 +55,14 @@ const save = () => {
 
 const render = () => {
     clearElement(projectsList)
-    lists.forEach((list, index) => {
+    lists.forEach((list) => {
         const newTitle = document.createElement('li');
-        newTitle.id = index;
+        newTitle.dataset.listId = list.id;
         newTitle.classList.add('title-name');
         newTitle.innerText = list.title;
+        if (list.id === selectedListId) {
+            newTitle.classList.add('active-list')
+        }
         projectsList.appendChild(newTitle);
     })
 }
@@ -66,9 +72,9 @@ const saveAndRender = () => {
     render();
 }
 
-const createTitle = (title, index) => {
+const createTitle = (title) => {
     return {
-        id: title[index],
+        id: Date.now().toString(),
         title: title,
         tasks: []
     }
@@ -85,4 +91,12 @@ AddProjectForm.addEventListener('submit', (e) => {
     saveAndRender();
 })
 
-render()
+projectsList.addEventListener('click', e => {
+    if (e.target.tagName.toLowerCase() === 'li') {
+        console.log(e.target);
+        selectedListId = e.target.dataset.listId;
+        saveAndRender();
+    }
+})
+
+render();
