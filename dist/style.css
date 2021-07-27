@@ -67,13 +67,17 @@ nav.project-panel h1 {
 }
 
 .title-name {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2rem;
+    font-family: Roboto, sans-serif;
+    font-size: 1.6rem;
     padding: 0.5rem;
     background-color: #ddd;
     width: 100%;
     cursor: pointer;
 }
+
+.active-list {
+    font-weight: 700;
+  }
 
 .title-name:hover {
     background-color: #ccc;
