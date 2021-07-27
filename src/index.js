@@ -1,8 +1,8 @@
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';
-const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
+const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId';
 
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
-let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
+let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
 
 // New projects list
 const projectsList = document.querySelector('#projects-list');
@@ -16,6 +16,11 @@ const cancelPopupBtn = document.querySelector('#button-cancel-project-popup');
 // Form & Input inside popup 
 const AddProjectForm = document.querySelector('#form-add-project');
 const addProjectPopupInput = document.querySelector('#input-add-project-popup');
+// Add tasks - section
+const listDisplayContainer = document.querySelector('[data-list-display-container]');
+const listTitleElement = document.querySelector('[data-list-title]');
+const listCountElement = document.querySelector('[data-list-count]');
+const tasksContainer = document.querySelector('[data-tasks]');
 
 const openPopup = () => {
     // Open pop-up view
@@ -38,14 +43,14 @@ const closePopup = () => {
 addProjectBtn.addEventListener('click', () => {
     openPopup();
     cancelPopupBtn.addEventListener('click', (e) => {
-        e.preventDefault()
+        e.preventDefault();
         closePopup();
     })
 })
 
 const clearElement = (element) => {
     while (element.firstChild) {
-        element.removeChild(element.firstChild)
+        element.removeChild(element.firstChild);
     }
 }
 
@@ -54,14 +59,26 @@ const save = () => {
 }
 
 const render = () => {
-    clearElement(projectsList)
+    clearElement(projectsList);
+    renderLists();
+
+    const selectedList = lists.find(list => list.id === selectedListId);
+    if (selectedListId === null) {
+        listDisplayContainer.style.display = 'none';
+    } else {
+        listDisplayContainer.style.display = '';
+        listTitleElement.innerText = selectedList.title;
+    }
+}
+
+const renderLists = () => {
     lists.forEach((list) => {
         const newTitle = document.createElement('li');
         newTitle.dataset.listId = list.id;
         newTitle.classList.add('title-name');
         newTitle.innerText = list.title;
         if (list.id === selectedListId) {
-            newTitle.classList.add('active-list')
+            newTitle.classList.add('active-list');
         }
         projectsList.appendChild(newTitle);
     })
@@ -81,7 +98,7 @@ const createTitle = (title) => {
 }
 
 AddProjectForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const inputText = addProjectPopupInput.value;
     console.log(inputText);
     if (inputText === null || inputText === '') return

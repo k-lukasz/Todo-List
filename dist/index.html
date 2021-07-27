@@ -35,11 +35,62 @@
             <button class="button-cancel-project-popup" id="button-cancel-project-popup">Cancel</button>
         </div>
         </div>
-
-    </div>
     </nav>
 
-</main>
+    <!-- Projects tasks -->
+    <div id="todos" data-list-display-container>
+        <div class="todo-lister">
+          <div class="todo-header">
+            <h2 data-list-title>Project's title</h2>
+            <p data-list-count><span>0 tasks remaining</span></p>
+          </div>
+          <div class="todo-list" data-tasks></div>
+          <div class="below-todo">
+            <div class="btns">
+
+                <button class="button-add-task" id="button-add-task">☑️Add a new task</button>
+                
+            </div>
+          </div>
+    </main>
+
+          <!-- <div id="modal">
+            <div class="container">
+              <h2>New Task</h2>
+              <div class="close">+</div>
+              <form data-new-task-form>
+                <label for="name">Task name:</label><br />
+                <input
+                  type="text"
+                  id="name"
+                  data-new-task-input
+                  placeholder="Task name"
+                  ariel-label="Add new task item"
+                  autocomplete="off"
+                  required
+                /><br />
+                <label for="due-date">Due date:</label>
+                <input type="date" id="due-date" name="due-date" /><br />
+                <label for="priority">Priority:</label><br />
+                <select name="priority" id="priority">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option></select
+                ><br />
+                <label for="description">Description:</label><br />
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="6"
+                ></textarea
+                ><br />
+                <input type="submit" />
+              </form>
+            </div>
+          </div> -->
+
+    </div>
 
 <footer class="footer">
     <p>Copyright © 2021 Me</p>
