@@ -93,10 +93,15 @@ AddProjectForm.addEventListener('submit', (e) => {
 
 projectsList.addEventListener('click', e => {
     if (e.target.tagName.toLowerCase() === 'li') {
-        console.log(e.target);
         selectedListId = e.target.dataset.listId;
         saveAndRender();
     }
+})
+
+deleteProjectBtn.addEventListener('click', () => {
+    lists = lists.filter(list => list.id !== selectedListId);
+    selectedListId = null;
+    saveAndRender();
 })
 
 render();
