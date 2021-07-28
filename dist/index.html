@@ -48,12 +48,26 @@
           <div class="below-todo">
             <div class="btns">
 
-                <button class="button-add-task" id="button-add-task">☑️Add a new task</button>
+                <!-- <button class="button-add-task" id="button-add-task">☑️Add a new task</button> -->
                 
+                <div class="new-task-creator">
+                  <form action="" data-new-task-form>
+                      <input 
+                        type="text"
+                        data-new-task-input
+                        class="new task"
+                        placeholder="new task name"
+                        aria-label="new task name"
+                      />
+                      <button class="btn create" aria-label="create new task">+</button>
+                    </form>
+              </div>
+
             </div>
           </div>
     </main>
 
+                <!-- Advanced add-task for future upgrade  -->
           <!-- <div id="modal">
             <div class="container">
               <h2>New Task</h2>
@@ -71,7 +85,7 @@
                 /><br />
                 <label for="due-date">Due date:</label>
                 <input type="date" id="due-date" name="due-date" /><br />
-                <label for="priority">Priority:</label><br />
+                <label for="priority">Priority:</label><br/>
                 <select name="priority" id="priority">
                   <option value="Low">Low</option>
                   <option value="Medium">Medium</option>
@@ -97,6 +111,17 @@
 </footer>
 
 </div>
+
+
+<template id="task-template">
+  <div class="task">
+    <input type="checkbox"/>
+    <label>
+      <span class="custom-checkbox"></span>
+    </label>
+  </div>
+</template>
+
     <script src="main.js"></script>
 </body>
 </html>
