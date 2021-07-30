@@ -86,38 +86,31 @@ nav.project-panel h1 {
 /* Nav - buttons */
 
 .button-add-project {
+    margin-top: 5rem !important;
+}
+
+.button-add-project,
+.button-delete-project,
+.button-clear-completed-tasks {
     display: block;
     border: none;
     background-color: #ddd;
-    margin-top: 5rem;
+    margin-top: 0.5rem;
     width: 100%;
     padding: 0.5rem;
 }
 
-.button-add-project.active {
+.button-add-project.active,
+.button-delete-project.active,
+.button-clear-completed-tasks.active {
     display: none;
   }
 
-.button-add-project:hover {
+.button-add-project:hover,
+.button-delete-project:hover,
+.button-clear-completed-tasks:hover {
   background-color: #ccc;
 }
-
-.button-delete-project {
-    display: block;
-    border: none;
-    background-color: #ddd;
-    width: 100%;
-    padding: 0.5rem;
-}
-
-.button-delete-project.active {
-    display: none;
-  }
-
-.button-delete-project:hover {
-  background-color: #ccc;
-}
-
 
 /* Nav - popup */
 
