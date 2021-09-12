@@ -1,3 +1,3 @@
 # Todo-List
 
-> - [live demo](https://siias.github.io/Todo-List/dist/index.html)
+> - [live demo](https://k-lukasz.github.io/Todo-List/dist/index.html)
